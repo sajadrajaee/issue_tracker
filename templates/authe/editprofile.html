@@ -1,0 +1,23 @@
+{% load static %}
+
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="{% static 'authe/css/editprofile.css' %}">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form class="form" action="" method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+    
+        <button type="submit" >Edit</button>
+        <!-- <button type="submit">reset password here</button>  -->
+         <a style="text-decoration:none;padding:9px 20px; border-radius:5px;background-color: blue;color:white" href="{% url 'authe:change_password' %}">
+            reset password here
+         </a>
+         <a style="text-decoration:none;padding:9px 20px; border-radius:5px;background-color: rgb(85, 85, 101);color:white; margin-left: 5px;" href="{% url 'authe:profile' %}">Go Back</a>
+    </form>    
+</body>
+</html>

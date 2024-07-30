@@ -1,0 +1,6 @@
+{% extends "base.html" %}
+{% block content %}
+    <h2>Landing Page</h2>
+    <a href="{% url 'authe:login' %}">login</a> <br>
+    <a href="{% url 'authe:register' %}">sign up</a>
+{% endblock %}

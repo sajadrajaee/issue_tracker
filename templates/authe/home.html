@@ -1,0 +1,38 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="{% static 'authe/css/home.css' %}">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Authentication System</title>
+</head>
+<body>
+    <header>
+        <h1>Welcome to the Authentication System</h1>
+    </header>
+    <main>
+        <section class="intro">
+            <p>This is a secure authentication system built with Django. You can register, log in, and manage your account securely.</p>
+        </section>
+        <section class="actions">
+            
+                <p>You are logged in as {{ user.username }}</p>
+                <h2>Your Account Details</h2>
+                <ul>
+                    <li>Username: {{ user.username }}</li>
+                    <li>Email: {{ user.email }}</li>
+                    <li>First Name: {{ user.first_name }}</li>
+                    <li>Last Name: {{ user.last_name }}</li>
+                    <!-- Add more details as needed -->
+                </ul>
+                <a href="{% url 'authe:profile' %}">Profile</a>
+                <a href="{% url 'authe:logout' %}">Logout</a>
+            
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2023 Your Name</p>
+    </footer>
+</body>
+</html>

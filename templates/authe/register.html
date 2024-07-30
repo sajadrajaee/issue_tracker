@@ -1,0 +1,20 @@
+{% load static %}
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="{% static 'authe/css/register.css' %}">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+</head>
+<body>
+    <form class="form" action="" method="post">
+        {% csrf_token %}
+        {{form.as_p}}
+        <button type="submit" >register</button>
+        <button style="background-color: rgb(32, 124, 32);" type="submit">
+            <a style="text-decoration: none; color:white;" href="{% url 'authe:login' %}">already have account?</a>
+        </button>
+    </form>
+</body>
+</html>
