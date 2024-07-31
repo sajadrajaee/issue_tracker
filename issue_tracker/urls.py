@@ -21,9 +21,9 @@ from django.conf import settings
 from django.conf.urls.static import static
 
 urlpatterns = [
-    path('', TemplateView.as_view(template_name="landing_page.html"), name="landing_page"),
+    # path('', TemplateView.as_view(template_name="landing_page.html"), name="landing_page"),
     path('admin/', admin.site.urls),
-    path('project/', include('projects.urls')),
+    path('', include('projects.urls')),
     path('authe/', include('authe.urls'))
 ]
 urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)

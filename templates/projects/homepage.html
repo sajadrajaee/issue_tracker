@@ -1,7 +1,32 @@
-{% extends 'base.html' %}
-
-{% block content%}
-<h1>welcome to home page "</h1>
-    <a href="{% url 'authe:logout' %}">Logout</a>
-
-{% endblock %}
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Django Issue Tracker</title>
+    <link rel="stylesheet" href="{% static 'projects/css/homepage.css' %}">
+</head>
+<body>
+    <h1>Django Issue Tracker</h1>
+    <a class="log" href="{% url 'authe:logout' %}">logout</a>
+    <a class="log" href="{% url 'projects:report_issue' %}">Report Issue</a>
+    <a class="log" href="{% url 'projects:reported_issues_display' %}"> reported issues</a>
+    {% if project %}
+    <div class="projects">
+        <ul>
+        {% for item in project %} 
+            <li>
+                <h3>{{ item.project_name }}</h3>
+                <p>{{ item.project_detail }}</p>
+                <a href="{% url 'projects:tasks' %}">View Tasks</a>
+            </li>
+        {% endfor %}
+        {% if project.Image %}
+            <img src="{{ project.Image.url }}" alt="project image">
+        {% endif %}
+        </ul>
+    </div>
+    {% endif %}
+</body>
+</html>

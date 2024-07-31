@@ -1,0 +1,31 @@
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="{% static 'projects/css/homepage.css' %}">
+</head>
+<body>
+    <div class="tasks">
+        <h2>Tasks</h2>
+        {% if tasks %}
+        <ul>
+            {% for task in tasks %}
+            <li>
+                <h3>title : {{ task.title }}</h3>
+                <p>status : {{ task.task_status }}</p>
+                <p>assigned to : {{ task.assigned_to }}</p>
+                <p>{{ task.content }}</p>
+            </li>
+            {% endfor %}
+            {% if task.image %}
+                <img src="{{ task.image.url }}" alt="">
+            {% endif %}
+        </ul>
+        {% else %}
+            <p>oops, no tasks here yet!</p>
+        {% endif %}
+    </div>
+</body>
+</html>

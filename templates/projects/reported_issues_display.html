@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+
+{% block content %}
+{% if issues %}
+    {% for issue in issues %}
+        {{ issue.project }}
+        {{ issue.task }}
+        {{ issue.report }}
+        {{ issue.report_date }} <hr>
+    {% endfor %}
+{% else %}
+    <p>no issue reported yet</p>
+{% endif %}
+{% endblock %}
