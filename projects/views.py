@@ -11,7 +11,7 @@ def homepage(request):
 
 def tasks_display(request):
     return render(
-        request, 'projects/tasks.html', {'tasks': ProjectTasks.display_tasks()}
+        request, 'projects/tasks.html', {'tasks': ProjectTasks.objects.all()}
     )
     
 def report_issue_view(request):
@@ -22,7 +22,7 @@ def report_issue_view(request):
             task = form.cleaned_data['task']
             report = form.cleaned_data['report']
             
-            task_ = ProjectTasks.objects.create(
+            task_ = ReportIssue.objects.create(
                 project=project,
                 task = task,
                 report=report

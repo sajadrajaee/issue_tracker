@@ -52,9 +52,6 @@ class ProjectTasks(models.Model):
     
     def __str__(self):
         return f"{self.title} | {self.task_status}"
-    
-    def display_tasks():
-        return ProjectTasks.objects.all()
 
 class ReportIssue(models.Model):
     project = models.ForeignKey(Project, on_delete=models.CASCADE)

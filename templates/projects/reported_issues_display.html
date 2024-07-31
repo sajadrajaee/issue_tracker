@@ -3,10 +3,9 @@
 {% block content %}
 {% if issues %}
     {% for issue in issues %}
-        {{ issue.project }}
-        {{ issue.task }}
-        {{ issue.report }}
-        {{ issue.report_date }} <hr>
+        <p>project : {{ issue.project }} - {{ issue.report_date }} </p>
+        <p>task : {{ issue.task }}</p> 
+        <p> issue :  {{ issue.report }}</p>
     {% endfor %}
 {% else %}
     <p>no issue reported yet</p>

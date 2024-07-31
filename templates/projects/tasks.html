@@ -7,8 +7,10 @@
     <link rel="stylesheet" href="{% static 'projects/css/homepage.css' %}">
 </head>
 <body>
+
     <div class="tasks">
         <h2>Tasks</h2>
+        <a style="text-decoration: none;" href="{% url 'projects:homepage' %}">Back</a>
         {% if tasks %}
         <ul>
             {% for task in tasks %}

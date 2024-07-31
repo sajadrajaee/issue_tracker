@@ -5,4 +5,4 @@ class ReportIssueForm(forms.ModelForm):
     
     class Meta:
         model = ReportIssue
-        exclude = ('report_date',)
+        fields = ('project', 'task', 'report')

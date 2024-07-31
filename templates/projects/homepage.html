@@ -22,8 +22,8 @@
                 <a href="{% url 'projects:tasks' %}">View Tasks</a>
             </li>
         {% endfor %}
-        {% if project.Image %}
-            <img src="{{ project.Image.url }}" alt="project image">
+        {% if project.image %}
+            <img src="{{ project.image.url }}" alt="project image">
         {% endif %}
         </ul>
     </div>
