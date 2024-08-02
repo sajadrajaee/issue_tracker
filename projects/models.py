@@ -56,6 +56,12 @@ class ProjectTasks(models.Model):
 class ReportIssue(models.Model):
     project = models.ForeignKey(Project, on_delete=models.CASCADE)
     task = models.ForeignKey(ProjectTasks, on_delete=models.CASCADE)
+    reporter = models.ForeignKey(
+        CustomUser, 
+        on_delete=models.CASCADE,
+        null=True,
+        blank=True,
+    )
     report = models.TextField()
     report_date = models.DateTimeField(auto_now_add=True)
     

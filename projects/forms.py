@@ -5,4 +5,7 @@ class ReportIssueForm(forms.ModelForm):
     
     class Meta:
         model = ReportIssue
-        fields = ('project', 'task', 'report')
+        fields = ['project', 'task', 'report', 'reporter']
+        
+        del fields[-1] 
+        

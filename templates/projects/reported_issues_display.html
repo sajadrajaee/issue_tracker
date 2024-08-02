@@ -5,7 +5,8 @@
     {% for issue in issues %}
         <p>project : {{ issue.project }} - {{ issue.report_date }} </p>
         <p>task : {{ issue.task }}</p> 
-        <p> issue :  {{ issue.report }}</p>
+        <p>reported by : {{ issue.reporter }}</p>
+        <p> issue :  {{ issue.report }}</p> <hr>
     {% endfor %}
 {% else %}
     <p>no issue reported yet</p>

@@ -21,15 +21,16 @@ def report_issue_view(request):
             project = form.cleaned_data['project']
             task = form.cleaned_data['task']
             report = form.cleaned_data['report']
+            form.instance.reporter = request.user
             
             task_ = ReportIssue.objects.create(
                 project=project,
                 task = task,
-                report=report
+                report=report,
             )
             task_.save()
             return redirect('projects:reported_issues_display')
-    form = ReportIssueForm()
+    form = ReportIssueForm(initial={'reporter':request.user})
     return render(request, 'projects/report_issue_view.html', {'form':form})
         
 def reported_issues_display(request):
